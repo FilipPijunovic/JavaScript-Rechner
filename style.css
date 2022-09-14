@@ -1,0 +1,34 @@
+body {
+    font-family: 'Cabin', sans-serif;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    height: 70vh;
+    background-color: rgb(67, 130, 140);
+    color: white;
+}
+
+td {
+    width: 25%;
+    text-align: center;
+    font-size: 24px;
+    background-color:aqua;
+}
+
+td:hover {
+    background-color: rgb(205, 241, 150);
+    cursor: pointer;
+}
+result {
+    height: 30vh;
+    background-color: rgb(21, 93, 156);
+    color: white;
+    font-size: 128px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 24px;
+    box-sizing: border-box;
+}

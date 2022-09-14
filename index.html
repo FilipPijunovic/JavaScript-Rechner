@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <script>
+        function number(number) {
+            document.getElementById('result').innerHTML += number;
+        }
+        function calculate() {
+            let container = document.getElementById('result');
+            let result = eval(container.innerHTML);
+            container.innerHTML = result;
+        }
+        function deleteResult() {
+            let container = document.getElementById('result');
+            if (container.innerHTML.endsWith(' ')) {
+                container.innerHTML = container.innerHTML.slice(0,-3);
+            } 
+            else {
+                container.innerHTML = container.innerHTML.slice(0,-1);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="result">
+        
+    </div>
+
+    <table>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td onclick="deleteResult()"> DEL </td>
+        </tr>
+
+        <tr>
+            <td onclick="number (7)"> 7 </td>
+            <td onclick="number (8)"> 8 </td>
+            <td onclick="number (9)"> 9 </td>
+            <td onclick="number (' / ')"> / </td>
+        </tr>
+
+        <tr>
+            <td onclick="number (4)"> 4 </td>
+            <td onclick="number (5)"> 5 </td>
+            <td onclick="number (6)"> 6 </td>
+            <td onclick="number (' * ')"> x </td>
+        </tr>
+
+        <tr>
+            <td onclick="number (1)"> 1 </td>
+            <td onclick="number (2)"> 2 </td>
+            <td onclick="number (3)"> 3 </td>
+            <td onclick="number (' + ')"> + </td>
+        </tr>
+
+        <tr>
+            <td onclick="number (0)"> 0 </td>
+            <td onclick="number (' . ')"> , </td>
+            <td onclick="calculate()" id = "result"> = </td>
+            <td onclick="number (' - ')"> - </td>
+        </tr>
+    </table>
+</body>
+
+</html>
